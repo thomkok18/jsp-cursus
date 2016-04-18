@@ -5,30 +5,44 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>JSP</title>
 </head>
-<%  double aantalSeconde = 60; %>
+<%  int seconde = 1;
+	int minuut = 60;
+	int uur = 3600;
+	int dag = 216000;
+	int week = 1512000;
+	int maand = 6048000;
+%>
         <table border="1">
             <thead>
                 <tr>
-                    <th>Naam</th>
-                    <th>Totaal &euro; <%= aantalSeconde %></th>
+                    <th>Tijd</th>
+                    <th>Aantal Seconden</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Jan</td>
-                    <td>&euro; <%= aantalSeconde/4 %></td>
+                    <td>Minuut</td>
+                    <td><%= seconde*60 %></td>
                 </tr>
                 <tr>
-                    <td>Ali</td>
-                    <td>&euro; <%= aantalSeconde/4 %></td>
+                    <td>Uur</td>
+                    <td><%= minuut*60 %></td>
                 </tr>
                 <tr>
-                    <td>Jeannette</td>
-                    <td>&euro; <%= aantalSeconde/4 %></td>
+                    <td>Dag</td>
+                    <td><%= uur*24 %></td>
                 </tr>
                 <tr>
-                    <td>Piet</td>
-                    <td>&euro; <%= aantalSeconde/4 %></td>
+                    <td>Week</td>
+                    <td><%= dag*7 %></td>
+                </tr>
+                <tr>
+                    <td>Maand</td>
+                    <td><%= week*4 %></td>
+                </tr>
+                                <tr>
+                    <td>Jaar</td>
+                    <td><%= maand*12 %></td>
                 </tr>
             </tbody>
         </table>
