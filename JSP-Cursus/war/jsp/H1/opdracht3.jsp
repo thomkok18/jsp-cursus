@@ -10,6 +10,5 @@ Calendar nu = Calendar.getInstance();
 int huidigUur = nu.get(Calendar.HOUR_OF_DAY);
 
 //hier komt de overige java code
-
 %>
 </html>
