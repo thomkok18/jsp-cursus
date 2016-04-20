@@ -13,7 +13,6 @@
 	int huidigUur = nu.get(Calendar.HOUR_OF_DAY);
 	String tekst = "";
 
-	//hier komt de overige java code
 	if (huidigUur >= 1) {
 		tekst = ("Goedemorgen");
 	}

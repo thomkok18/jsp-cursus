@@ -9,24 +9,16 @@
 </head>
 <body>
 <%
-	Calendar nu = Calendar.getInstance();
-	int huidigUur = nu.get(Calendar.HOUR_OF_DAY);
-	String tekst = "";
 
-	//hier komt de overige java code
-	if (huidigUur >= 1) {
-		tekst = ("Goedemorgen");
-	}
+int teller, a = 1, b = 1, c = 0, x = 10;
 
-	if (huidigUur >= 12) {
-		tekst = ("Goedemiddag");
-	}
-
-	if (huidigUur >= 18) {
-		tekst = ("Goedenavond");
-	}
+for(teller = 1; teller <= 20; teller++) {
+	a = b + c;
+	b = c;
+	c = a;
+	x += 40;
+}
 %>
-<p><%= tekst %>!</p>
-<p>Het is <%= huidigUur %> uur.</p>
+<p><%= a %></p>
 </body>
 </html>
