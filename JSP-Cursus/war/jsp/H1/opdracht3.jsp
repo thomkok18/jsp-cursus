@@ -8,24 +8,29 @@
 <title>JSP</title>
 </head>
 <body>
-<%
-	Calendar nu = Calendar.getInstance();
-	int huidigUur = nu.get(Calendar.HOUR_OF_DAY);
-	String tekst = "";
+	<%
+		Calendar nu = Calendar.getInstance();
+		int huidigUur = nu.get(Calendar.HOUR_OF_DAY);
+		String tekst = "";
 
-	if (huidigUur >= 1) {
-		tekst = ("Goedemorgen");
-	}
+		if (huidigUur >= 1) {
+			tekst = ("Goedemorgen");
+		}
 
-	if (huidigUur >= 12) {
-		tekst = ("Goedemiddag");
-	}
+		if (huidigUur >= 12) {
+			tekst = ("Goedemiddag");
+		}
 
-	if (huidigUur >= 18) {
-		tekst = ("Goedenavond");
-	}
-%>
-<p><%= tekst %>!</p>
-<p>Het is <%= huidigUur %> uur.</p>
+		if (huidigUur >= 18) {
+			tekst = ("Goedenavond");
+		}
+	%>
+	<p><%=tekst%>!
+	</p>
+	<p>
+		Het is
+		<%=huidigUur%>
+		uur.
+	</p>
 </body>
 </html>
