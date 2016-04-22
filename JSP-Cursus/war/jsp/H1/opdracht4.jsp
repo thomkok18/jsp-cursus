@@ -9,13 +9,12 @@
 </head>
 <body>
 	<%
-		long teller, a = 1, b = 1, c = 0, x = 10;
+		long teller, a = 1, b = 1, c = 0;
 
 		for (teller = 1; teller <= 20; teller++) {
 			a = b + c;
 			b = c;
 			c = a;
-			x += 40;
 	%>
 	<p>
 		<%=a%>
