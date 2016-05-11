@@ -2,18 +2,21 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <%
-int teller, antwoord = 0, eersteGetal = 0, tweedeGetal = 5;
+	String velden = "";
+	int antwoord;
 
-for (teller = 1; teller <= 10; teller++) {
-	eersteGetal++;
-	antwoord = eersteGetal * tweedeGetal;
+	for (int i = 0; i < 8; i++) {
+		velden += "<tr>";
+		for (int j = 0; j < 8; j++) {
+			if ((i + j) % 2 == 0) {
+				velden += "<tr>";
+		}
+	}
+}
 %>
 <body>
 <p>
-<%= "Tafel van " + eersteGetal + " X 5 = " + antwoord%>
+<%=velden%>
 </p>
-<%
-}
-%>
 </body>
 </html>
