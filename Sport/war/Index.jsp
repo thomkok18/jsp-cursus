@@ -7,10 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<input type="text" name="roepnaam" placeholder="roepnaam">(roepnaam)<br>
+<form action="/sport" method="get">
+			<input type="text" name="roepnaam" placeholder="roepnaam">(roepnaam)<br>
 			<input type="text" name="tussenvoegsels" placeholder="tussenvoegsels">(tussenvoegsels)<br>
 			<input type="text" name="achternaam" placeholder="achternaam">(achternaam)<br>
 			<input type="text" name="email" placeholder="e-mail">(e-mail)<br>
 			<input type="submit" name="verzend_nieuw_lid_knop" value="verstuur">
+</form>
 </body>
 </html>

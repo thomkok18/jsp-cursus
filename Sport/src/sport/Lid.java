@@ -1,5 +1,11 @@
 package sport;
 
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 public class Lid {
 	private String spelerscode, roepnaam, tussenvoegsels, achternaam, email;
 
@@ -60,5 +66,15 @@ public class Lid {
 			naam = roepnaam + " " + tussenvoegsels + " " + achternaam;
 		}
 		return naam;
+	}
+
+	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		if (req.getParameter("verzend_nieuw_lid_knop") != null) {
+			String roepnaam = req.getParameter("roepnaam");
+			String tussenvoegsels = req.getParameter("tussenvoegsels");
+			String achternaam = req.getParameter("achternaam");
+			String email = req.getParameter("email");
+			Lid lid = new Lid(roepnaam, tussenvoegsels, achternaam, email);
+		}
 	}
 }
