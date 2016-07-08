@@ -48,8 +48,7 @@ if (request.getParameter("knopOk") != null || request.getParameter("knopMin") !=
 </p>
 <%}
 }%>
-
-<input type="hidden" name="achtergrondTekst" value="<%=getal%>">
+	<input type="hidden" name="achtergrondTekst" value="<%=getal%>">
 </form>
 <%}%>
 </body>
