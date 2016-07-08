@@ -11,12 +11,12 @@ String stringGetal;
 	<input type="text" name="tekst_input_1"> 
 	<input type="submit" name="knopOk" value="Ok">
 <%
-if (request.getParameter("achtergrondTekstHoog") == null) {
+if (request.getParameter("achtergrondGetalHoog") == null) {
 	laagsteGetal = Integer.MAX_VALUE;
 	hoogsteGetal = Integer.MIN_VALUE;
 } else {
-	laagsteGetal = Integer.parseInt(request.getParameter("achtergrondTekstLaag"));
-	hoogsteGetal = Integer.parseInt(request.getParameter("achtergrondTekstHoog"));
+	laagsteGetal = Integer.parseInt(request.getParameter("achtergrondGetalLaag"));
+	hoogsteGetal = Integer.parseInt(request.getParameter("achtergrondGetalHoog"));
 	}
 		if (request.getParameter("knopOk") != null) {
 			geklikt = 1;
@@ -44,8 +44,8 @@ if (geklikt == 1) {
 	}
 }
 %>
-	<input type="text" name="achtergrondTekstHoog" value="<%=hoogsteGetal%>"> 
-	<input type="text" name="achtergrondTekstLaag" value="<%=laagsteGetal%>">
+	<input type="text" name="achtergrondGetalHoog" value="<%=hoogsteGetal%>"> 
+	<input type="text" name="achtergrondGetalLaag" value="<%=laagsteGetal%>">
 </form>
 </body>
 </html>

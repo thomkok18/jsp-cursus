@@ -3,49 +3,55 @@
 <html>
 <body>
 <%
-int getal = 0, hoogsteGetal = 0, laagsteGetal = 0, geklikt = 0;
-double antwoord = 0;
-String stringGetal;
+int geklikt = 0;
+double fahrenheit = 0, celsius = 0;
+String stringGetal = "", fout = "";
 %>
 <form action="" method="get">
-	<input type="text" name="tekst_input_1"> 
-	<input type="submit" name="knopOk" value="Ok">
+	<input type="text" name="celsius">
+	<input type="text" name="fahrenheit">
+	<input type="submit" name="knopOmrekenen" value="Omrekenen">
 <%
-if (request.getParameter("achtergrondTekstHoog") == null) {
-	laagsteGetal = Integer.MAX_VALUE;
-	hoogsteGetal = Integer.MIN_VALUE;
-} else {
-	laagsteGetal = Integer.parseInt(request.getParameter("achtergrondTekstLaag"));
-	hoogsteGetal = Integer.parseInt(request.getParameter("achtergrondTekstHoog"));
-	}
-		if (request.getParameter("knopOk") != null) {
+		if (request.getParameter("knopOmrekenen") != null) {
 			geklikt = 1;
 			try {
-				stringGetal = request.getParameter("tekst_input_1");
-				getal = Integer.parseInt(stringGetal);
-				if (getal > hoogsteGetal) {
-					hoogsteGetal = getal;
-				}
-				if (getal < laagsteGetal) {
-					laagsteGetal = getal;
-				}
-				} catch (Exception e) {
-					geklikt = 0;
-				}
+				if (request.getParameter("celsius") == "" && request.getParameter("fahrenheit") == "") {
+					        fout = "Voer een waarde in!";
+					      }
+				else if (request.getParameter("celsius") == "") {
+					stringGetal = request.getParameter("fahrenheit");
+					fahrenheit = Integer.parseInt(stringGetal);
+					celsius = fahrenheit / 1.8 - 32;
+			      }
+			    else if (request.getParameter("fahrenheit") == "") {
+			    	stringGetal = request.getParameter("celsius");
+					celsius = Integer.parseInt(stringGetal);
+					fahrenheit = celsius * 1.8 + 32;
+			    }
+			} catch (Exception e) {
+				geklikt = 0;
 			}
-if (geklikt == 1) {
-%>
-<%
-	if (laagsteGetal != Integer.MAX_VALUE) {
-%>
-		<p><%="Hoogste getal: " + hoogsteGetal%></p>
-		<p><%="Laagste getal: " + laagsteGetal%></p>
-<%
-	}
-}
-%>
-	<input type="text" name="achtergrondTekstHoog" value="<%=hoogsteGetal%>"> 
-	<input type="text" name="achtergrondTekstLaag" value="<%=laagsteGetal%>">
-</form>
+		}
+		if (geklikt == 1) {
+			%>
+			<p><%=celsius + " graden celcius " + " is " + fahrenheit + " Fahrenheit"%></p>
+			<p><%=fahrenheit + " fahrenheit " + " is " + celsius + " celsius"%></p>
+		 <table>
+      <tr>
+        <th>Celsius</th>
+        <th>Fahrenheit</th>
+      </tr>
+      <tr>
+		<td><input type="text" name="achtergrondCelsius" value="<%=celsius%>"></td> 
+		<td><input type="text" name="achtergrondFahrenheit" value="<%=fahrenheit%>"></td>
+		</tr>
+      <% if (request.getParameter("knopOmrekenen") != null) { %>
+      <tr>
+        <td colspan="2" class="fout"><%= fout %></td>
+      </tr>
+      		<% } 
+      }%>
+      </table>
+	</form>
 </body>
 </html>
