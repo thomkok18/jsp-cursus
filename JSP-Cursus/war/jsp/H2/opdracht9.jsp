@@ -3,7 +3,7 @@
 <html>
 <body>
 <%
-int getal = 0, antwoord = 0;
+int getal = 0, antwoord = 0, geklikt = 0;
 String stringGetal = "";
 %>
 <form action="" method="get">
@@ -11,35 +11,46 @@ String stringGetal = "";
 	<input type="submit" name="knopOk" value="Ok"> 
 	<input type="submit" name="knopPlus" value="plus"> 
 	<input type="submit" name="knopMin" value="min">
-
 <%
 if (request.getParameter("knopOk") != null || request.getParameter("knopMin") != null || request.getParameter("knopPlus") != null) {
-	
-	if(request.getParameter("tekst_input_1") == ""){
-		stringGetal = request.getParameter("achtergrondTekst");
-		getal = Integer.parseInt(stringGetal);	
-	} else {
-		stringGetal = request.getParameter("tekst_input_1");
-		getal = Integer.parseInt(stringGetal);	
-	}
-	
-	if(request.getParameter("knopMin") != null){
+	getal = 0;
+	geklikt = 1;
+
+	try {
+		if (request.getParameter("tekst_input_1") == "") {
+			stringGetal = request.getParameter("achtergrondTekst");
+
+			getal = Integer.parseInt(stringGetal);
+
+		} else {
+			stringGetal = request.getParameter("tekst_input_1");
+			getal = Integer.parseInt(stringGetal);
+		}
+
+	if (request.getParameter("knopMin") != null) {
+		geklikt = 1;
 		getal--;
 	}
-	if(request.getParameter("knopPlus") != null){
+	if (request.getParameter("knopPlus") != null) {
+		geklikt = 1;
 		getal++;
+	}
+	} catch (Exception e) {
+		geklikt = 0;
 	}
 
 	for (int i = 1; i <= 10; i++) {
 		antwoord = i * getal;
 %>
-	<p>
-		<%="Tafel van " + i + " x " + getal + " = " + antwoord%>
-	</p>
-	<%}%>
-	
-		<input type="hidden" name="achtergrondTekst" value="<%=getal%>">
-	</form>
+<%if (geklikt == 1) {%>
+<p>
+	<%="Tafel van " + i + " x " + getal + " = " + antwoord%>
+</p>
+<%}
+}%>
+
+<input type="hidden" name="achtergrondTekst" value="<%=getal%>">
+</form>
 <%}%>
 </body>
 </html>
