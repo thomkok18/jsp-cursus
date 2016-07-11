@@ -10,20 +10,21 @@ if (request.getParameter("knopOk") != null) {
     }
     else if (!request.getParameter("celsius").equals("")) {
       int fahrenheit = g.naarFahrenheit(request.getParameter("celsius"));
-      fahrenheitValue += fahrenheit;
+      fahrenheitValue = Integer.toString(fahrenheit);
     }
     else if (!request.getParameter("fahrenheit").equals("")) {
       int celsius = g.naarCelsius(request.getParameter("fahrenheit"));
-      celsiusValue += celsius;
+      celsiusValue = Integer.toString(celsius);
     }
   }
-  //foute of geen invoer werpt Exception op
   catch(NumberFormatException e) {
     fout = "Voer een geheel getal in!";
   }
 }
 %>
-        
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<body>        
 <h1>Fahrenheit en Celsius omrekenen</h1>
 <form method="get">
   <table>
@@ -44,3 +45,5 @@ if (request.getParameter("knopOk") != null) {
     <% } %>
   </table>
 </form>
+</body>
+</html>
