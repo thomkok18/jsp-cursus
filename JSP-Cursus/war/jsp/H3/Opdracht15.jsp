@@ -5,33 +5,30 @@
 <html>
 <%
 Rekenmachine rm = new Rekenmachine();
-String uitkomst = "";
-String foutboodschap = "";
-
+String uitkomst = "", fout = "";
 
 if (request.getParameter("functie") != null) {
-  if (request.getParameter("arg1").equals("") || 
-    request.getParameter("arg2").equals("")) {
-      foutboodschap = "Voer <em>twee</em> getallen in";
+  if (request.getParameter("tekstvak1").equals("") || 
+    request.getParameter("tekstvak2").equals("")) {
+      fout = "Voer twee getallen in";
   }
   else {
     try {
-      double getal1 = Double.parseDouble(request.getParameter("arg1"));
-      double getal2 = Double.parseDouble(request.getParameter("arg2"));
+      double getal1 = Double.parseDouble(request.getParameter("tekstvak1"));
+      double getal2 = Double.parseDouble(request.getParameter("tekstvak2"));
       String functie = request.getParameter("functie");
       uitkomst += rm.bereken(getal1, getal2, functie);
     }
     catch(NumberFormatException e) {
-      foutboodschap = "Je mag alleen (decimale) getallen invoeren";
+      fout = "Je mag alleen (decimale) getallen invoeren";
     }
   }
 }
 %>
-
     <form method="get">
       <table>
         <thead>
-          <tr id="kop">
+          <tr>
             <th colspan="4">Rekenmachine</th>
           </tr>
         </thead>
@@ -40,16 +37,15 @@ if (request.getParameter("functie") != null) {
             <td class="getallabels" colspan="2">Eerste getal</td>
             <td class="getallabels" colspan="2">Tweede getal</td>
           </tr>
-          <tr id="invoer">
+          <tr>
             <td colspan="2">
-              <input type="text" name="arg1" value="<%= uitkomst %>">
+              <input type="text" name="tekstvak1" value="<%= uitkomst %>">
             </td>
             <td colspan="2">
-              <input type="text" name="arg2" value="">
+              <input type="text" name="tekstvak2" value="">
             </td>
           </tr>
-
-          <tr id="knoppen" >
+          <tr>
             <td>
               <div class="knopcontainer">
                 <input type="submit" name="functie" value="+">
@@ -72,7 +68,7 @@ if (request.getParameter("functie") != null) {
             </td>
           </tr>
           <tr>
-            <td colspan="4" class="fout"><%= foutboodschap %></td>
+            <td colspan="4" class="fout"><%= fout %></td>
           </tr>
       </table>
     </form>

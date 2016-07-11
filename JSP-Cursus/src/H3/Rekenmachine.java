@@ -1,7 +1,7 @@
 package H3;
 
 public class Rekenmachine {
-  double uitkomst = 0;
+	double uitkomst = 0;
 
   public double bereken(double arg0, double arg1, String functie) {
     switch (functie) {
