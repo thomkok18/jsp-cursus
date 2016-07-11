@@ -7,16 +7,15 @@ public class Graden {
 	public Graden() {
 		
 	}
-	//Exception opwerpen voor foute invoer
-	public int naarCels(String sFahr) throws NumberFormatException {
-		int fahr = Integer.parseInt(sFahr);
-		uitkomst = Math.round((fahr -32)/1.8f);
+	public int naarCelsius(String stringFahrenheit) throws NumberFormatException {
+		int fahrenheit = Integer.parseInt(stringFahrenheit);
+		uitkomst = Math.round(fahrenheit / 1.8f + 32);
 		return uitkomst;
 	}
 	
-	public int naarFahr(String sCels) throws NumberFormatException {
-		int cels = Integer.parseInt(sCels);
-		uitkomst = Math.round(cels * 1.8f + 32);
+	public int naarFahrenheit(String stringCelsius) throws NumberFormatException {
+		int celsius = Integer.parseInt(stringCelsius);
+		uitkomst = Math.round(celsius * 1.8f + 32);
 		return uitkomst;
 	}
 }

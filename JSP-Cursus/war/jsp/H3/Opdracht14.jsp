@@ -1,56 +1,46 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@page import="H3.Graden" %>
-
 <%
 Graden g = new Graden();
-String celsValue = "";
-String fahrValue = "";
-String warning = "";
-//check of er op knop is geklikt
-if (request.getParameter("knop") != null) {
+String celsiusValue = "", fahrenheitValue = "", fout = "";
+if (request.getParameter("knopOk") != null) {
   try {
-    //er mag maar één input veld zijn ingevuld
-    if (!request.getParameter("cels").equals("") 
-     && !request.getParameter("fahr").equals("")) {
-       warning = "Voer slechts &eacute;&eacute;n waarde in!";
+    if (!request.getParameter("celsius").equals("") && !request.getParameter("fahrenheit").equals("")) {
+       fout = "Voer slechts één waarde in!";
     }
-    //gebruiker heeft Celsius ingevoerd
-    else if (!request.getParameter("cels").equals("")) {
-      int fahr = g.naarFahr(request.getParameter("cels"));
-      fahrValue += fahr;
+    else if (!request.getParameter("celsius").equals("")) {
+      int fahrenheit = g.naarFahrenheit(request.getParameter("celsius"));
+      fahrenheitValue += fahrenheit;
     }
-    //gebruiker heeft Fahrenheit ingevoerd
-    else if (!request.getParameter("fahr").equals("")) {
-      int cels = g.naarCels(request.getParameter("fahr"));
-      celsValue += cels;
+    else if (!request.getParameter("fahrenheit").equals("")) {
+      int celsius = g.naarCelsius(request.getParameter("fahrenheit"));
+      celsiusValue += celsius;
     }
   }
   //foute of geen invoer werpt Exception op
   catch(NumberFormatException e) {
-    warning = "Voer een geheel getal in";
+    fout = "Voer een geheel getal in!";
   }
 }
 %>
         
 <h1>Fahrenheit en Celsius omrekenen</h1>
-<form action="index.jsp" method="get">
-  <table id="graden">
+<form method="get">
+  <table>
     <tr>
       <th>Celsius</th>
       <th>Fahrenheit</th>
     </tr>
     <tr>
-      <td><input type="text" name="cels" value="<%=celsValue%>"></td>
-      <td><input type="text" name="fahr" value="<%=fahrValue%>"></td>
-      <td><input type="submit" name="knop" value="Omrekenen"></td>
+      <td><input type="text" name="celsius" value="<%=celsiusValue%>"></td>
+      <td><input type="text" name="fahrenheit" value="<%=fahrenheitValue%>"></td>
+      <td><input type="submit" name="knopOk" value="Omrekenen"></td>
     </tr>
     
-    <% if (request.getParameter("knop") != null) { %>
+    <% if (request.getParameter("knopOk") != null) { %>
       <tr>
-        <td colspan="2" class="fout"><%= warning %></td>
+        <td colspan="2" class="fout"><%= fout %></td>
       </tr>
     <% } %>
   </table>
-
 </form>
-
