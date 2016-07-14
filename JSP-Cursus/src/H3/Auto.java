@@ -38,6 +38,7 @@ public class Auto {
       *
       * @return geeft prijs als geformatteerde String
       */
+    
     public String getPrijsFormat() {
     	DecimalFormat df = new DecimalFormat("#,##0.--");
     	double prijs = (double) this.getPrijs();
