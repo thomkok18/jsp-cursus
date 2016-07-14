@@ -1,10 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@page import="H3.Auto"%>
 <%@page import="H3.AutoLijst"%>
+<%@ page import="java.util.ArrayList" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" " http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <%
+AutoLijst autolijst = new AutoLijst();
+ArrayList<Auto> lijst = autolijst.getLijst();
 String fout = "";
 
 if (request.getParameter("knop") != null) {
@@ -13,13 +16,16 @@ if (request.getParameter("knop") != null) {
 	  }
 } else {
 	try {
-
-    }
+		
+		for (Auto auto: lijst) {
+			System.out.println(auto.getMerk());
+			}
+		}
+    
       catch(NumberFormatException e) {
         fout = "Je mag alleen (decimale) getallen invoeren";
       }
-}
-
+	}
 %>
 <form method="get">
 	<table>
@@ -35,7 +41,7 @@ if (request.getParameter("knop") != null) {
 						<input type="submit" name="knop" value="Ok">
 					</div>
 				</td>
-<tr>
+			<tr>
             <td colspan="2">
               <input type="text" name="tekstvak1" value="">
             </td>
