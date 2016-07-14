@@ -8,8 +8,7 @@ Rekenmachine rm = new Rekenmachine();
 String uitkomst = "", fout = "";
 
 if (request.getParameter("functie") != null) {
-  if (request.getParameter("tekstvak1").equals("") || 
-    request.getParameter("tekstvak2").equals("")) {
+  if (request.getParameter("tekstvak1").equals("") || request.getParameter("tekstvak2").equals("")) {
       fout = "Voer twee getallen in";
   }
   else {

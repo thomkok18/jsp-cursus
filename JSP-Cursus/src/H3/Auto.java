@@ -25,7 +25,6 @@ public class Auto {
     }
     
     public int getPrijs() {
-    	
         return prijs;
     }
     
