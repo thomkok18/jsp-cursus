@@ -12,26 +12,20 @@ ArrayList<String> merken = new ArrayList<String>();
 AutoLijst autolijst = new AutoLijst();
 ArrayList<Auto> lijst = autolijst.getLijst();
 String fout = "";
-
-if (request.getParameter("knop") != null) {
-	  if (request.getParameter("tekstvak1").equals("") || request.getParameter("tekstvak2").equals("")) {
-	      fout = "Voer twee getallen in";
-	  }
-} else {
-	try {
+			 
+try {
+	for (Auto auto : lijst) { %>
+		<img src="<%out.print(auto.getFoto());%>" height="200" width="300"/><br>
+		<% out.print(auto.getMerk()); %><br>
+		<% out.print(auto.getType()); %><br>
+		<% out.print(auto.getPrijsFormat()); %><br><%
+	}	
+}
+					
+catch (NumberFormatException e) {
+	fout = "Je mag alleen (decimale) getallen invoeren";
+}
 		
-		for (Auto auto: lijst) { %>
-			<img src="<% out.print(auto.getFoto()); %>"/><br>
-			<% out.print(auto.getMerk()); %><br>
-			<% out.print(auto.getType()); %><br>
-			<% out.print(auto.getPrijsFormat()); %><br>
-<%		}
-	}
-    
-      catch(NumberFormatException e) {
-        fout = "Je mag alleen (decimale) getallen invoeren";
-      }
-	}
 %>
 <form method="get">
 	<table>
@@ -46,31 +40,29 @@ if (request.getParameter("knop") != null) {
 					<div class="knopcontainer">
 						<input type="submit" name="knop" value="Ok">
 						<select name="merk" value="<%=merken%>">
-						<option value="Alle merken">Alle Merken</option>
-						<option value="Ford">Ford</option>
-						<option value="Opel">Opel</option>
-						<option value="Subaru">Subaru</option>
-						<option value="Mercedes">Mercedes</option>
-						<option value="Ferrari">Ferrari</option>
-						<option value="Lotus">Lotus</option>
-						<option value="Citroen">Citroen</option>
-						<option value="Volvo">Volvo</option>
-						<option value="Mini">Mini</option>
+							<option value="Alle merken">Alle Merken</option>
+							<option value="Ford">Ford</option>
+							<option value="Opel">Opel</option>
+							<option value="Subaru">Subaru</option>
+							<option value="Mercedes">Mercedes</option>
+							<option value="Ferrari">Ferrari</option>
+							<option value="Lotus">Lotus</option>
+							<option value="Citroen">Citroen</option>
+							<option value="Volvo">Volvo</option>
+							<option value="Mini">Mini</option>
 						</select>
 					</div>
 				</td>
 			<tr>
-            <td colspan="2">
-              <input type="text" name="tekstvak1" value="">
-            </td>
-            <td colspan="2">
-              <input type="text" name="tekstvak2" value="">
-            </td>
-          </tr>
-          <tr>
-            <td colspan="4" class="fout"><%= fout %></td>
-          </tr>
-	</table>
-</form>
+				<td colspan="2"><input type="text" name="tekstvak1" value="1">
+				</td>
+				<td colspan="2"><input type="text" name="tekstvak2" value="">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4" class="fout"><%=fout%></td>
+			</tr>
+		</table>
+	</form>
 </body>
 </html>
