@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@page import="H3.Auto"%>
 <%@page import="H3.AutoLijst"%>
-<%@ page import="java.util.ArrayList" %>
+<%@page import="java.util.ArrayList"%>
+<%@page import="static java.lang.System.out"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" " http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -20,12 +21,12 @@ if (request.getParameter("knop") != null) {
 	try {
 		
 		for (Auto auto: lijst) { %>
-			<p><% auto.getMerk();
-				  auto.getType();
-				  auto.getPrijs();
-			%></p>
-		<% }
-		}
+			<img src="<% out.print(auto.getFoto()); %>"/><br>
+			<% out.print(auto.getMerk()); %><br>
+			<% out.print(auto.getType()); %><br>
+			<% out.print(auto.getPrijsFormat()); %><br>
+<%		}
+	}
     
       catch(NumberFormatException e) {
         fout = "Je mag alleen (decimale) getallen invoeren";
@@ -46,6 +47,15 @@ if (request.getParameter("knop") != null) {
 						<input type="submit" name="knop" value="Ok">
 						<select name="merk" value="<%=merken%>">
 						<option value="Alle merken">Alle Merken</option>
+						<option value="Ford">Ford</option>
+						<option value="Opel">Opel</option>
+						<option value="Subaru">Subaru</option>
+						<option value="Mercedes">Mercedes</option>
+						<option value="Ferrari">Ferrari</option>
+						<option value="Lotus">Lotus</option>
+						<option value="Citroen">Citroen</option>
+						<option value="Volvo">Volvo</option>
+						<option value="Mini">Mini</option>
 						</select>
 					</div>
 				</td>
@@ -61,7 +71,6 @@ if (request.getParameter("knop") != null) {
             <td colspan="4" class="fout"><%= fout %></td>
           </tr>
 	</table>
-	<option value="merken">Alle Merken</option>
 </form>
 </body>
 </html>
