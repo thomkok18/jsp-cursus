@@ -1,4 +1,4 @@
-package web.jsp.H3.lib;
+package H3.lib;
 
 public class Rekenmachine {
     double uitkomst = 0.0D;

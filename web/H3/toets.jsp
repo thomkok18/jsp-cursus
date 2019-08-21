@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
-<%@ page import="web.jsp.H3.lib.Auto" %>
-<%@ page import="web.jsp.H3.lib.AutoLijst" %>
+<%@ page import="H3.lib.Auto" %>
+<%@ page import="H3.lib.AutoLijst" %>
+
 
 <%
     String[] options = new String[]{"--Alle merken--", "Audi", "Ferrari", "Fiat", "Mercedes", "Opel", "Volkswagen"};
@@ -46,7 +47,7 @@
                         <%
                             for (String option : options) {
                         %>
-                        <option value="<% out.println(option); %>"><% out.println(option); %></option>
+                        <option value="<% System.out.println(option); %>"><% System.out.println(option); %></option>
                         <%
                             }
                         %>

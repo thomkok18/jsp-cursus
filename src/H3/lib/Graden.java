@@ -1,4 +1,4 @@
-package web.jsp.H3.lib;
+package H3.lib;
 
 public class Graden {
     private int uitkomst;

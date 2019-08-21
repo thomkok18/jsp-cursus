@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
-<%@ page import="web.jsp.H3.lib.Graden" %>
+<%@ page import="H3.lib.Graden" %>
 <%
     Graden g = new Graden();
     String celsiusValue = "", fahrenheitValue = "", fout = "";
