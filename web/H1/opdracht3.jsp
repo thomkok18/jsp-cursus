@@ -15,7 +15,11 @@
     int huidigUur = nu.get(Calendar.HOUR_OF_DAY);
     String tekst = "";
 
-    if (huidigUur >= 1) {
+    if (huidigUur < 6) {
+        tekst = ("Goedenacht");
+    }
+
+    if (huidigUur >= 6) {
         tekst = ("Goedemorgen");
     }
 
@@ -27,12 +31,7 @@
         tekst = ("Goedenavond");
     }
 %>
-<p><%=tekst%>!
-</p>
-<p>
-    Het is
-    <%=huidigUur%>
-    uur.
-</p>
+<p><%=tekst%>!</p>
+<p>Het is <%=huidigUur%> uur.</p>
 </body>
 </html>

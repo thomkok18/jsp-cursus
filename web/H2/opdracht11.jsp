@@ -8,7 +8,9 @@
     String stringGetal;
 %>
 <form action="" method="get">
-    <input type="text" name="tekstvak">
+    <label>
+        <input type="text" name="tekstvak">
+    </label>
     <input type="submit" name="knopOk" value="Ok"><br>
     <%
         if (request.getParameter("achtergrondGetalHoog") == null) {
@@ -38,9 +40,9 @@
     <%
         if (laagsteGetal != Integer.MAX_VALUE) {
     %>
-    <p>Het hoogste getal is: </p><input type="text" name="achtergrondGetalHoog" value="<%=hoogsteGetal%>">
+    <p>Het hoogste getal is: </p><label><input type="text" name="achtergrondGetalHoog" value="<%=hoogsteGetal%>"></label>
     <br>
-    <p>Het laagste getal is: </p><input type="text" name="achtergrondGetalLaag" value="<%=laagsteGetal%>">
+    <p>Het laagste getal is: </p><label><input type="text" name="achtergrondGetalLaag" value="<%=laagsteGetal%>"></label>
     <%
             }
         }

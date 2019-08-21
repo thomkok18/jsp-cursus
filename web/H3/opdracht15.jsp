@@ -2,6 +2,7 @@
 <%@ page import="web.jsp.H3.lib.Rekenmachine" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<body>
 <%
     Rekenmachine rm = new Rekenmachine();
     String uitkomst = "", fout = "";
@@ -21,7 +22,7 @@
         }
     }
 %>
-<form method="get">
+<form method="get" action="">
     <table>
         <thead>
         <tr>
@@ -35,10 +36,10 @@
         </tr>
         <tr>
             <td colspan="2">
-                <input type="text" name="tekstvak1" value="<%= uitkomst %>">
+                <label><input type="text" name="tekstvak1" value="<%= uitkomst %>"></label>
             </td>
             <td colspan="2">
-                <input type="text" name="tekstvak2" value="">
+                <label><input type="text" name="tekstvak2" value=""></label>
             </td>
         </tr>
         <tr>

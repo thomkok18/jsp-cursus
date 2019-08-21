@@ -9,9 +9,7 @@
         eersteGetal++;
         antwoord = eersteGetal * tweedeGetal;
 %>
-<p>
-    <%= "Tafel van " + eersteGetal + " X 5 = " + antwoord%>
-</p>
+<p><%= "Tafel van " + eersteGetal + " X 5 = " + antwoord%></p>
 <%
     }
 %>

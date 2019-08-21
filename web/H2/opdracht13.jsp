@@ -36,20 +36,21 @@
                 stringTekstvak1 += antwoord;
             }
         } catch (NumberFormatException e) {
+            fout = "Er is iets fout gegaan";
         }
     }
 %>
 
 <h1>Rekenmachine</h1>
-<form method="get">
+<form method="get" action="">
     <table>
         <tr>
             <th>Eerste getal</th>
             <th>Tweede getal</th>
         </tr>
         <tr>
-            <td><input type="text" name="eersteGetal" value="<%=stringTekstvak1%>"></td>
-            <td><input type="text" name="tweedeGetal" value="<%=stringTekstvak2%>"></td>
+            <td><label><input type="text" name="eersteGetal" value="<%=stringTekstvak1%>"></label></td>
+            <td><label><input type="text" name="tweedeGetal" value="<%=stringTekstvak2%>"></label></td>
             <td><input type="submit" name="plus" value="+"></td>
             <td><input type="submit" name="min" value="-"></td>
             <td><input type="submit" name="keer" value="*"></td>
@@ -57,8 +58,7 @@
         </tr>
         <% if (request.getParameter("plus") != null || request.getParameter("min") != null || request.getParameter("keer") != null || request.getParameter("delenDoor") != null) { %>
         <tr>
-            <td colspan="2" class="fout"><%= fout %>
-            </td>
+            <td colspan="2" class="fout"><%= fout %></td>
         </tr>
         <% } %>
     </table>

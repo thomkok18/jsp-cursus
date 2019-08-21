@@ -18,33 +18,27 @@
     <tbody>
     <tr>
         <td>Minuut</td>
-        <td><%= seconde * 60 %>
-        </td>
+        <td><%= seconde * 60 %></td>
     </tr>
     <tr>
         <td>Uur</td>
-        <td><%= minuut * 60 %>
-        </td>
+        <td><%= minuut * 60 %></td>
     </tr>
     <tr>
         <td>Dag</td>
-        <td><%= uur * 24 %>
-        </td>
+        <td><%= uur * 24 %></td>
     </tr>
     <tr>
         <td>Week</td>
-        <td><%= dag * 7 %>
-        </td>
+        <td><%= dag * 7 %></td>
     </tr>
     <tr>
         <td>Maand</td>
-        <td><%= week * 4 %>
-        </td>
+        <td><%= week * 4 %></td>
     </tr>
     <tr>
         <td>Jaar</td>
-        <td><%= maand * 12 %>
-        </td>
+        <td><%= maand * 12 %></td>
     </tr>
     </tbody>
 </table>

@@ -4,7 +4,9 @@
 <body>
 <p>Voer hier het getal in waar je de tafel van wil zien.</p>
 <form action="" method="get">
-    <input type="text" name="tekstvak">
+    <label>
+        <input type="text" name="tekstvak">
+    </label>
     <input type="submit" name="knopOk" value="Ok">
     <input type="submit" name="knopPlus" value="plus">
     <input type="submit" name="knopMin" value="min">
@@ -44,9 +46,7 @@
                 antwoord = oplopendGetal * tafel;
     %>
     <%if (geklikt == true) {%>
-    <p>
-        <%="Tafel van " + oplopendGetal + " x " + tafel + " = " + antwoord%>
-    </p>
+    <p><%="Tafel van " + oplopendGetal + " x " + tafel + " = " + antwoord%></p>
     <%
             }
         }

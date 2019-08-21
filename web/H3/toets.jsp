@@ -41,7 +41,7 @@
         <div class="col-xs-12">
             <form action="toets.jsp" method="post">
                 <div class="form-group">
-                    <label>Merk:</label>
+                    <label for="merk">Merk:</label>
                     <select class="form-control" id="merk" name="merk">
                         <%
                             for (String option : options) {
@@ -53,11 +53,11 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Minimale prijs:</label>
+                    <label for="minprijs">Minimale prijs:</label>
                     <input type="text" class="form-control" id="minprijs" name="minprijs" value="">
                 </div>
                 <div class="form-group">
-                    <label>Maximale prijs:</label>
+                    <label for="maxprijs">Maximale prijs:</label>
                     <input type="text" class="form-control" id="maxprijs" name="maxprijs" value="">
                 </div>
                 <button type="submit" name="knop" value="submit" class="btn btn-default">Submit</button>

@@ -5,7 +5,9 @@
 <body>
 <p>Voer hier het aantal graden dat je wil omzetten naar fahrenheit.</p>
 <form action="" method="get">
-    <input type="text" name="tekstvak">
+    <label>
+        <input type="text" name="tekstvak">
+    </label>
     <input type="submit" name="knopOk" value="Ok">
 </form>
 <%
@@ -28,8 +30,7 @@
     }
     if (geklikt == true) {
 %>
-<p><%=nf.format(celsius) + " graden celcius " + " is " + nf.format(fahreinheit) + " Fahrenheit"%>
-</p>
+<p><%=nf.format(celsius) + " graden celcius " + " is " + nf.format(fahreinheit) + " Fahrenheit"%></p>
 <%}%>
 </body>
 </html>
