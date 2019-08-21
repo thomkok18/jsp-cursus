@@ -1,0 +1,73 @@
+.wheely {
+    background-image: url('../img/wheely_header.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-color: black;
+    width: 100%;
+    height: 124px;
+    margin-bottom: 50px;
+}
+
+div.wheely-img {
+    background-position: center center;
+    background-size: cover;
+    display: inline-block;
+    height: 200px;
+    width: 300px;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 0px;
+    text-shadow: 1px 1px 8px #ffffff;
+}
+
+h5 {
+    background-color: rgba(255, 255, 255, 0.6);;
+    padding: 5px;
+}
+
+.form-group {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.btn {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+div.autokader {
+    float: left;
+    margin: 1em;
+    width: 220px;
+    height: 120px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    background: -webkit-linear-gradient(right, rgba(127, 127, 127, 0), rgba(127, 127, 127, 1)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(left, rgba(127, 127, 127, 0), rgba(127, 127, 127, 1)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(left, rgba(127, 127, 127, 0), rgba(127, 127, 127, 1)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to left, rgba(127, 127, 127, 0), rgba(127, 127, 127, 1)); /* Standard syntax (must be last) */
+
+}
+
+div.autokader img {
+    width: 120px;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+div.autokader p.merktype {
+    color: #FFF8DC;
+    background-color: #800000;
+    text-align: center;
+}
+
+div.autokader p.prijs {
+    color: #800000;
+    text-align: right;
+    margin-right: 1em;
+}
