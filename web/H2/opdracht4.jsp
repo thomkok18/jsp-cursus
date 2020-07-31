@@ -9,6 +9,7 @@
 %>
 <form action="" method="get">
     <label>
+        Voer een getal in
         <input type="text" name="tekstvak">
     </label>
     <input type="submit" name="knopOk" value="Ok"><br>
