@@ -1,9 +1,10 @@
 <%@ page contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
 <%@ page import="H3.lib.Auto" %>
 <%@ page import="H3.lib.AutoLijst" %>
+<%@ page import="java.util.Objects" %>
 
 <%
-    String[] options = new String[]{"--Alle merken--", "Audi", "Ferrari", "Fiat", "Mercedes", "Opel", "Volkswagen"};
+    String[] options = {"--Alle merken--", "Ford", "Opel", "Subaru", "Mercedes", "Ferrari", "Lotus", "Citroen", "Volvo", "Mini"};
     AutoLijst al = new AutoLijst();
 %>
 <html>
@@ -33,14 +34,16 @@
     </header>
     <div>
         <div class="col-xs-12">
-            <form action="toets.jsp" method="post">
+            <form action="toets.jsp" method="get">
                 <div class="form-group">
                     <label for="merk">Merk:</label>
                     <select class="form-control" id="merk" name="merk">
                         <%
                             for (String option : options) {
                         %>
-                        <option value="<% System.out.println(option); %>"><% System.out.println(option); %></option>
+                        <option value="<%= option %>" <%=Objects.equals(request.getParameter("merk"), option) ? "selected='selected'" : "" %>>
+                            <%= option %>
+                        </option>
                         <%
                             }
                         %>
@@ -48,17 +51,18 @@
                 </div>
                 <div class="form-group">
                     <label for="minprijs">Minimale prijs:</label>
-                    <input type="text" class="form-control" id="minprijs" name="minprijs" value="">
+                    <input type="number" class="form-control" id="minprijs" name="minprijs" min="0" step="0.01" value="<%= request.getParameter("minprijs") == null ? "0" : request.getParameter("minprijs") %>">
                 </div>
                 <div class="form-group">
                     <label for="maxprijs">Maximale prijs:</label>
-                    <input type="text" class="form-control" id="maxprijs" name="maxprijs" value="">
+                    <input type="number" class="form-control" id="maxprijs" name="maxprijs" step="0.01" value="<%=Objects.equals(request.getParameter("maxprijs"), "99999999999999") ? "99999999999999" : request.getParameter("maxprijs")%>">
                 </div>
                 <button type="submit" name="knop" value="submit" class="btn btn-default">Submit</button>
             </form>
             <div>
                 <%
                     for (Auto auto : al.getLijst()) {
+                        if (request.getParameter("merk") == null && request.getParameter("minprijs") == null && request.getParameter("maxprijs") == null || (Objects.equals(auto.getMerk(), request.getParameter("merk")) || Objects.equals(request.getParameter("merk"), "--Alle merken--")) && Float.parseFloat(request.getParameter("minprijs")) <= auto.getPrijs() && Float.parseFloat(request.getParameter("maxprijs")) >= auto.getPrijs()) {
                 %>
                 <div class="autokader">
                     <img src="<%= auto.getFoto() %>" alt="<%= auto.getMerk() + " " + auto.getType() %>">
@@ -70,6 +74,7 @@
                     </p>
                 </div>
                 <%
+                        }
                     }
                 %>
             </div>
