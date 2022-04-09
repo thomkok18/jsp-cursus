@@ -64,12 +64,15 @@ public class AutoLijst {
      */
     public ArrayList<String> getMerken() {
         ArrayList<String> merken = new ArrayList<String>();
+
         for (Auto auto : autolijst) {
             String merk = auto.getMerk();
+
             if (!merken.contains(merk)) {
                 merken.add(merk);
             }
         }
+
         return merken;
     }
 }
