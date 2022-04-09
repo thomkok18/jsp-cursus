@@ -32,7 +32,7 @@
 <div class="url-list">
     <a href="H3/opdracht1.jsp">Opdracht 1</a>
     <a href="H3/opdracht2.jsp">Opdracht 2</a>
-    <a href="H3/toets.jsp">Toets</a>
+    <a href="H3/mrWheely.jsp">mrWheely</a>
 </div>
 
 <h2>H4</h2>

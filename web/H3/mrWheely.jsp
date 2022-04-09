@@ -34,7 +34,7 @@
     </header>
     <div>
         <div class="col-xs-12">
-            <form action="toets.jsp" method="get">
+            <form action="mrWheely.jsp" method="get">
                 <div class="form-group">
                     <label for="merk">Merk:</label>
                     <select class="form-control" id="merk" name="merk">
