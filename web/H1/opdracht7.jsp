@@ -6,22 +6,22 @@
 </head>
 <body>
 <%
-    String velden = "";
+    StringBuilder velden = new StringBuilder();
     for (int rij = 1; rij <= 10; rij++) {
-        velden += "<tr>";
+        velden.append("<tr>");
         for (int kolom = 1; kolom <= 10; kolom++) {
             if (rij == 1 || kolom == 1) {
-                velden += "<th>" + (rij * kolom) + "</th>";
+                velden.append("<th>").append(rij * kolom).append("</th>");
             } else {
-                velden += "<td>" + (rij * kolom) + "</td>";
+                velden.append("<td>").append(rij * kolom).append("</td>");
             }
         }
-        velden += "</tr>";
+        velden.append("</tr>");
     }
 %>
 <h1>Vermenigvuldigingstabel</h1>
 <table border="1">
-    <%=velden%>
+    <%=velden.toString()%>
 </table>
 </body>
 </html>
