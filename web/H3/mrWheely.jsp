@@ -55,7 +55,7 @@
                 </div>
                 <div class="form-group">
                     <label for="maxprijs">Maximale prijs:</label>
-                    <input type="number" class="form-control" id="maxprijs" name="maxprijs" step="0.01" value="<%=Objects.equals(request.getParameter("maxprijs"), "99999999999999") ? "99999999999999" : request.getParameter("maxprijs")%>">
+                    <input type="number" class="form-control" id="maxprijs" name="maxprijs" step="0.01" value="<%= request.getParameter("maxprijs") != null ? request.getParameter("maxprijs") : "99999999999999" %>">
                 </div>
                 <button type="submit" name="knop" value="submit" class="btn btn-default">Submit</button>
             </form>
