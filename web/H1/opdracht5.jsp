@@ -3,18 +3,18 @@
 <html>
 <link rel="stylesheet" type="text/css" href="css/opdracht5.css">
 <%
-    String velden = "";
+    StringBuilder velden = new StringBuilder();
 
     for (int i = 0; i < 8; i++) {
-        velden += "<tr>";
+        velden.append("<tr>");
         for (int j = 0; j < 8; j++) {
             if ((i + j) % 2 == 0) {
-                velden += "<td class=\"zwart\"></td>";
+                velden.append("<td class='zwart'></td>");
             } else {
-                velden += "<td class=\"wit\"></td>";
+                velden.append("<td class='wit'></td>");
             }
         }
-        velden += "</tr>";
+        velden.append("</tr>");
     }
 %>
 <head>
@@ -23,7 +23,7 @@
 <body>
 <h1>Schaakbord</h1>
 <table id="schaakbord">
-    <%=velden%>
+    <%=velden.toString()%>
 </table>
 </body>
 </html>
