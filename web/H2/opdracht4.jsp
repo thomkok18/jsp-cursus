@@ -36,7 +36,7 @@
                 geklikt = false;
             }
         }
-        if (geklikt == true) {
+        if (geklikt) {
     %>
     <%
         if (laagsteGetal != Integer.MAX_VALUE) {

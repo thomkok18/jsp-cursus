@@ -28,7 +28,7 @@
             geklikt = false;
         }
     }
-    if (geklikt == true) {
+    if (geklikt) {
 %>
 <p><%=nf.format(celsius) + " graden celcius " + " is " + nf.format(fahreinheit) + " Fahrenheit"%></p>
 <%}%>
