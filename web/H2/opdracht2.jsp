@@ -1,3 +1,4 @@
+<%@ page import="java.util.Objects" %>
 <%@ page contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -20,21 +21,18 @@
             geklikt = true;
 
             try {
-                if (request.getParameter("tekstvak") == "") {
+                if (Objects.equals(request.getParameter("tekstvak"), "")) {
                     getal = request.getParameter("achtergrondTekst");
-                    tafel = Integer.parseInt(getal);
-
                 } else {
                     getal = request.getParameter("tekstvak");
-                    tafel = Integer.parseInt(getal);
                 }
 
+                tafel = Integer.parseInt(getal);
+
                 if (request.getParameter("knopMin") != null) {
-                    geklikt = true;
                     tafel--;
                 }
                 if (request.getParameter("knopPlus") != null) {
-                    geklikt = true;
                     tafel++;
                 }
             } catch (Exception e) {
@@ -45,7 +43,7 @@
                 oplopendGetal++;
                 antwoord = oplopendGetal * tafel;
     %>
-    <%if (geklikt == true) {%>
+    <%if (geklikt) {%>
     <p><%="Tafel van " + oplopendGetal + " x " + tafel + " = " + antwoord%></p>
     <%
             }
