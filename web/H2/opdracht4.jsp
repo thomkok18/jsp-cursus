@@ -37,18 +37,21 @@
             }
         }
         if (geklikt) {
+            if (laagsteGetal != Integer.MAX_VALUE) {
     %>
-    <%
-        if (laagsteGetal != Integer.MAX_VALUE) {
-    %>
-    <p>Het hoogste getal is: </p><label><input type="text" name="achtergrondGetalHoog" value="<%=hoogsteGetal%>"></label>
+    <p>Het hoogste getal is: </p>
+    <label>
+        <input type="text" name="achtergrondGetalHoog" value="<%=hoogsteGetal%>">
+    </label>
     <br>
-    <p>Het laagste getal is: </p><label><input type="text" name="achtergrondGetalLaag" value="<%=laagsteGetal%>"></label>
+    <p>Het laagste getal is: </p>
+    <label>
+        <input type="text" name="achtergrondGetalLaag" value="<%=laagsteGetal%>">
+    </label>
     <%
             }
         }
     %>
-
 </form>
 </body>
 </html>

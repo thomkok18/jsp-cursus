@@ -31,16 +31,21 @@
             <th>Fahrenheit</th>
         </tr>
         <tr>
-            <td><label><input type="text" name="celsius" value="<%=celsiusValue%>"></label></td>
-            <td><label><input type="text" name="fahrenheit" value="<%=fahrenheitValue%>"></label></td>
+            <td><label><input type="text" name="celsius" value="<%= celsiusValue %>"></label></td>
+            <td><label><input type="text" name="fahrenheit" value="<%= fahrenheitValue %>"></label></td>
             <td><input type="submit" name="knopOk" value="Omrekenen"></td>
         </tr>
 
-        <% if (request.getParameter("knopOk") != null) { %>
+        <%
+            if (request.getParameter("knopOk") != null) {
+        %>
         <tr>
-            <td colspan="2" class="fout"><%= fout %></td>
+            <td colspan="2" class="fout"><%= fout %>
+            </td>
         </tr>
-        <% } %>
+        <%
+            }
+        %>
     </table>
 </form>
 </body>

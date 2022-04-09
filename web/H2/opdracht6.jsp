@@ -49,18 +49,23 @@
             <th>Tweede getal</th>
         </tr>
         <tr>
-            <td><label><input type="text" name="eersteGetal" value="<%=stringTekstvak1%>"></label></td>
-            <td><label><input type="text" name="tweedeGetal" value="<%=stringTekstvak2%>"></label></td>
+            <td><label><input type="text" name="eersteGetal" value="<%= stringTekstvak1 %>"></label></td>
+            <td><label><input type="text" name="tweedeGetal" value="<%= stringTekstvak2 %>"></label></td>
             <td><input type="submit" name="plus" value="+"></td>
             <td><input type="submit" name="min" value="-"></td>
             <td><input type="submit" name="keer" value="*"></td>
             <td><input type="submit" name="delenDoor" value="/"></td>
         </tr>
-        <% if (request.getParameter("plus") != null || request.getParameter("min") != null || request.getParameter("keer") != null || request.getParameter("delenDoor") != null) { %>
+        <%
+            if (request.getParameter("plus") != null || request.getParameter("min") != null || request.getParameter("keer") != null || request.getParameter("delenDoor") != null) {
+        %>
         <tr>
-            <td colspan="2" class="fout"><%= fout %></td>
+            <td colspan="2" class="fout"><%= fout %>
+            </td>
         </tr>
-        <% } %>
+        <%
+            }
+        %>
     </table>
 </form>
 </body>

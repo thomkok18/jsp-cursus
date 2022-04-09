@@ -30,7 +30,11 @@
     }
     if (geklikt) {
 %>
-<p><%=nf.format(celsius) + " graden celcius " + " is " + nf.format(fahreinheit) + " Fahrenheit"%></p>
-<%}%>
+<p>
+    <%= nf.format(celsius) + " graden celcius " + " is " + nf.format(fahreinheit) + " Fahrenheit" %>
+</p>
+<%
+    }
+%>
 </body>
 </html>

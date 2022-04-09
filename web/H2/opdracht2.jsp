@@ -43,8 +43,12 @@
                 oplopendGetal++;
                 antwoord = oplopendGetal * tafel;
     %>
-    <%if (geklikt) {%>
-    <p><%="Tafel van " + oplopendGetal + " x " + tafel + " = " + antwoord%></p>
+    <%
+        if (geklikt) {
+    %>
+    <p>
+        <%= "Tafel van " + oplopendGetal + " x " + tafel + " = " + antwoord %>
+    </p>
     <%
             }
         }

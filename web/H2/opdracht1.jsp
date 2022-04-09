@@ -20,7 +20,9 @@
             oplopendGetal++;
             antwoord = oplopendGetal * tafel;
 %>
-<p><%="Tafel van " + oplopendGetal + " X " + tafel + " = " + antwoord%></p>
+<p>
+    <%= "Tafel van " + oplopendGetal + " X " + tafel + " = " + antwoord %>
+</p>
 <%
         }
     }
