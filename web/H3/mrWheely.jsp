@@ -1,4 +1,3 @@
-<%@ page contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
 <%@ page import="H3.lib.Auto" %>
 <%@ page import="H3.lib.AutoLijst" %>
 <%@ page import="java.util.Objects" %>
@@ -7,6 +6,7 @@
     String[] options = {"--Alle merken--", "Ford", "Opel", "Subaru", "Mercedes", "Ferrari", "Lotus", "Citroen", "Volvo", "Mini"};
     AutoLijst al = new AutoLijst();
 %>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
