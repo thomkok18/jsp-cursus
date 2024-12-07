@@ -36,7 +36,7 @@
 
 <h2>H4</h2>
 <div class="url-list">
-    <a href="H4/index.jsp">H4</a>
+    <a href="H4/Views/index.jsp">H4</a>
 </div>
 </body>
 </html>
